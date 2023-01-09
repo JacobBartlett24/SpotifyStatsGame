@@ -1,0 +1,15 @@
+#MainContainer{
+    height: calc(100vh - 60px);
+    background-color: black;
+    padding: 2rem 7rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.SongBox{
+    background-color: red;
+    height: 250px;
+    width: 200px;
+    border-radius: 15px;
+    padding: .7rem
+}
