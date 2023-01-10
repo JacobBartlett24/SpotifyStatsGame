@@ -13,3 +13,11 @@
     border-radius: 15px;
     padding: .7rem
 }
+
+.hidden{
+    display: none;
+}
+
+.token{
+    display: block
+}

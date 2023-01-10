@@ -1,13 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SongBox from './SongBox'
 import './Main.css'
-
-
+import { useState } from 'react'
+import axios from 'axios'
 
 const Main = () =>{
 
-    let clientId = '2925bd9799f14dc494db1806a83a4ab8';
-    let clientSecret = 'c1664067fccb44ca98bb738f153d282e';
+    const [token,setToken] = useState('');
+    const [data, setData] = useState();
+
+    useEffect(() =>{
+        setToken(
+            localStorage.getItem('token')
+        )
+    }, [])
+
+    useEffect(() =>{
+        const populateMain = async () =>{
+            setData(
+            axios.get(
+                "https://api.spotify.com/v1/me/playlists", {
+                    params:  {limit: 20, offset: 0},
+                    headers: {
+                      Authorization: `Bearer ${token}`,
+                    },
+                }
+            ));
+        }
+        populateMain()
+        console.log(data)
+    }, [])
 
     return(
         <div id='MainContainer'>
