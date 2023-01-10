@@ -4,34 +4,35 @@ import './Main.css'
 import { useState } from 'react'
 import axios from 'axios'
 
-const Main = () =>{
+const Main = (props) =>{
 
-    const [token,setToken] = useState('');
-    const [data, setData] = useState();
-
-    useEffect(() =>{
-        setToken(
-            localStorage.getItem('token')
-        )
-    }, [])
+    const [playlists, setPlaylists] = useState();
+    const [display, setDisplay] = useState([])
 
     useEffect(() =>{
-        const populateMain = async () =>{
-            setData(
-            axios.get(
-                "https://api.spotify.com/v1/me/playlists", {
-                    params:  {limit: 20, offset: 0},
-                    headers: {
-                      Authorization: `Bearer ${token}`,
-                    },
+        const getUserProfile = async () =>{
+            let playlists = await axios.get("https://api.spotify.com/v1/me/playlists", {
+                headers: {
+                    Authorization: `Bearer ${props.token}`
+                },
+                params: {
+                    limit: 20
                 }
-            ));
+            })
+            setPlaylists(playlists.data.items)
         }
-        populateMain()
-        console.log(data)
-    }, [])
+        getUserProfile();
+    }, [props.token]);
 
+    useEffect(() =>{
+        if(playlists && display.length === 0){
+            setDisplay(playlists.map(pl => <SongBox />))
+        }
+        console.log(display)
+    }, [display, playlists])
+    
     return(
+        
         <div id='MainContainer'>
             <SongBox />
         </div>

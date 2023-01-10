@@ -1,11 +1,11 @@
 import Main from './Main';
 import Header from './Header';
 
-const LandingPage = () =>{
+const LandingPage = (props) =>{
     return(
         <>
             <Header />
-            <Main />
+            <Main token={props.token}/>
         </>
     )
 }

@@ -1,11 +1,11 @@
 import React from "react";
 
-const SongBox = () =>{
+const SongBox = (props) =>{
     return(
-        <div class='SongBox'>
-            <div>picture</div>
-            <div>name</div>
-            <div>listens</div>
+        <div className='SongBox'>
+            <img alt={props.picture}></img>
+            <div>{props.name}</div>
+            <div>{props.listens}</div>
 
         </div>
     )
