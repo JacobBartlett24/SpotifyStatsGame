@@ -4,6 +4,8 @@
     padding: 2rem 7rem;
     display: grid;
     gap: 1rem;
+    overflow: overlay;
+
 }
 
 .SongBox{
@@ -11,7 +13,7 @@
     height: 250px;
     width: 200px;
     border-radius: 15px;
-    padding: .7rem
+    padding: .7rem;
 }
 
 .hidden{
@@ -20,4 +22,11 @@
 
 .token{
     display: block
+}
+
+.displayPlaylists{
+    display: grid;
+    grid-template-columns: repeat(5, 15rem);
+    gap: 1rem;
+    grid-template-rows: 4;
 }

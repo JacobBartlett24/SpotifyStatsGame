@@ -25,16 +25,28 @@ const Main = (props) =>{
     }, [props.token]);
 
     useEffect(() =>{
-        if(playlists && display.length === 0){
-            setDisplay(playlists.map(pl => <SongBox />))
+        
+        console.log(display) 
+        const displayPlaylists = () =>{
+            if(playlists && display.length === 0){
+            setDisplay(playlists.map(pl => <SongBox 
+                                                key={pl.id} 
+                                                name={pl.name}/>))
+            }
+            console.log(playlists)
         }
-        console.log(display)
-    }, [display, playlists])
+        displayPlaylists()
+        
+
+    }, [display,playlists])
     
     return(
         
         <div id='MainContainer'>
-            <SongBox />
+            <div className="displayPlaylists">
+                {display}
+                {display}
+            </div>
         </div>
     )
 }
