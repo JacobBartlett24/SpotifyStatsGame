@@ -9,9 +9,16 @@
 }
 
 .SongBox{
-    background-color: red;
+    background-color: #222326;
     height: 250px;
     width: 200px;
+    border-radius: 15px;
+    padding: .7rem;
+}
+
+.SongBox img{
+    height: 175px;
+    width: 175px;
     border-radius: 15px;
     padding: .7rem;
 }

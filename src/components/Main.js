@@ -31,6 +31,7 @@ const Main = (props) =>{
             if(playlists && display.length === 0){
             setDisplay(playlists.map(pl => <SongBox 
                                                 key={pl.id} 
+                                                picture={pl.images[0].url}
                                                 name={pl.name}/>))
             }
             console.log(playlists)
