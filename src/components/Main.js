@@ -29,12 +29,14 @@ const Main = (props) =>{
         console.log(display) 
         const displayPlaylists = () =>{
             if(playlists && display.length === 0){
-            setDisplay(playlists.map(pl => <SongBox 
+            setDisplay(playlists.map(pl => <SongBox
+                                                token={props.token}
+                                                id={pl.id}
                                                 key={pl.id} 
                                                 picture={pl.images[0].url}
                                                 name={pl.name}/>))
             }
-            console.log(playlists)
+            console.log(display)
         }
         displayPlaylists()
         
