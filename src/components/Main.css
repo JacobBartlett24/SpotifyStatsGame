@@ -37,3 +37,9 @@
     gap: 1rem;
     grid-template-rows: 4;
 }
+
+.songLink{
+    background-color: purple;
+    height: 100px;
+    width: 100px;
+}
