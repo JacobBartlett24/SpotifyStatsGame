@@ -3,10 +3,10 @@ import axios from "axios";
 import { useState } from "react";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Link,
+    Route
   } from "react-router-dom";
+import SongPage from "./SongPage";
 
 const SongBox = (props) =>{
     
@@ -40,15 +40,12 @@ const SongBox = (props) =>{
     }, [tracks])
 
     return(
+        
         <div onClick={() => getPlaylistTracks(props.id,props.token)} className='SongBox'>
             <img src={props.picture} alt={props.picture}></img>
             <div>{props.name}</div>
             <div>{props.listens}</div>
-            <Router>
-
-                {displayLink ? 
-                <div className="songLink"><Link to="/songPage"/></div> : "" }
-            </Router>
+            {displayLink ? <Link className="Link" to="/SongPage" /> : "" }
         </div>
     )
 }

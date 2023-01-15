@@ -47,7 +47,7 @@ const Main = (props) =>{
         
         <div id='MainContainer'>
             <div className="displayPlaylists">
-                {display}
+                
                 {display}
             </div>
         </div>
