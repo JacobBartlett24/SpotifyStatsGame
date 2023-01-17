@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, BrowserRouter, Router } from "react-router-dom";
+import { useState } from "react"
 
-const SongPage = () =>{
+const SongPage = (props) =>{
     return(
         <div>
-            Hi
+            
         </div>
     )
 }
