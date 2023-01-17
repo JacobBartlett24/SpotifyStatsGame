@@ -50,3 +50,20 @@
     width: 50px;
     display: block;
 }
+
+.Large {
+    height: 600px;
+    width: 400px;
+    border-radius: 15px;
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Large img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    padding: .7rem
+}

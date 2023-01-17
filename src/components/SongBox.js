@@ -4,7 +4,8 @@ import { useState } from "react";
 import {
     BrowserRouter as Router,
     Link,
-    Route
+    createSearchParams,
+    useNavigate
   } from "react-router-dom";
 import SongPage from "./SongPage";
 
@@ -12,6 +13,16 @@ const SongBox = (props) =>{
     
     const [tracks, setTracks] = useState([])
     const [displayLink, setDisplayLink] = useState(false)
+    const navigate = useNavigate();
+
+    const selectedPlaylist = (id) =>{
+        navigate({
+            pathname: "/SongPage",
+            search: createSearchParams({
+                id: id,
+            }).toString()
+        })
+    }
 
     const getPlaylistTracks = async (id, token) =>{
         let userTracks = 
@@ -24,8 +35,8 @@ const SongBox = (props) =>{
                     
                 }
         })
+        selectedPlaylist(id);
         setTracks(userTracks)
-        console.log(tracks)
         
     }
 
@@ -36,7 +47,6 @@ const SongBox = (props) =>{
             }
         }
         setupGame();
-        console.log(displayLink)
     }, [tracks])
 
     return(

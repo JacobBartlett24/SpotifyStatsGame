@@ -26,7 +26,6 @@ const Main = (props) =>{
 
     useEffect(() =>{
         
-        console.log(display) 
         const displayPlaylists = () =>{
             if(playlists && display.length === 0){
             setDisplay(playlists.map(pl => <SongBox
@@ -36,7 +35,6 @@ const Main = (props) =>{
                                                 picture={pl.images[0].url}
                                                 name={pl.name}/>))
             }
-            console.log(display)
         }
         displayPlaylists()
         
