@@ -7,7 +7,16 @@ import { useSearchParams } from "react-router-dom";
 const Game = () =>{
 
     const [searchParams] = useSearchParams();
-    const[tracks, setTracks] = useState([])
+    const [tracks, setTracks] = useState([])
+    const [song, setSong] = useState()
+    const [song0, setSong0] = useState()
+
+    const getRandomTracks = () =>{
+        setSong(tracks[Math.floor(Math.random()*tracks.length)]);
+        setSong0(tracks[Math.floor(Math.random()*tracks.length)]);
+        console.log(song)
+
+    }
 
     useEffect(() =>{
 
@@ -25,21 +34,30 @@ const Game = () =>{
                     }
             })
 
-            setTracks(userTracks)
+            setTracks(userTracks.data.items)
             }
         }
         getPlaylistTracks()
         console.log(tracks)
     },[tracks])
 
-    const getRandomTracks = () =>{
-        
-    }
+    useEffect(() => {
+        if(tracks.length !== 0){
+            getRandomTracks()   
+        }
+    }, [tracks])
+
+    
 
     return(
         <div className="MainGame">
-            <LargeSongBox />
-            <LargeSongBox />
+            <LargeSongBox  
+            name={song ? song.track.name : ''}
+            picture={song ? song.track.album.images[0].url : ''}
+            />
+            <LargeSongBox 
+            name={song0 ? song0.track.name : ''}
+            picture={song0 ? song0.track.album.images[0].url : ''}/>
         </div>
     )
 }
