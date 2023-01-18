@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 const LargeSongBox = (props) =>{
     
@@ -10,6 +11,7 @@ const LargeSongBox = (props) =>{
             <img src={props.picture} alt={props.picture}></img>
             <div>{props.name}</div>
             <div>{props.listens}</div>
+            <Link to="/Game" className="Link" />
         </div>
     )
 }

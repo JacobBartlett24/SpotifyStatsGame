@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import LargeSongBox from "./LargeSongBox";
+import { Link } from "react-router-dom";
 
 
 
@@ -45,7 +46,8 @@ const SongPage = (props) =>{
                     token={props.token}
                     key={playlistInfo.data.id}
                     picture={playlistInfo.data.images[0].url}
-                    name={playlistInfo.data.name}/>: ''}
+                    name={playlistInfo.data.name}
+                    link={<Link to="/Game"/>}/>: ''}
             {playlistId}         
         </div>
     )
