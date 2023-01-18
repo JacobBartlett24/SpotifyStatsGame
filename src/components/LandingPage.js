@@ -4,7 +4,6 @@ import Header from './Header';
 const LandingPage = (props) =>{
     return(
         <>
-            <Header />
             <Main token={props.token}/>
         </>
     )

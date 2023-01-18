@@ -9,8 +9,7 @@ const LargeSongBox = (props) =>{
         
         <div className='SongBox Large'>
             <img src={props.picture} alt={props.picture}></img>
-            <div>{props.name}</div>
-            <div>{props.listens}</div>
+            <div className="playlistName">{props.name}</div>
             {props.link}
         </div>
     )

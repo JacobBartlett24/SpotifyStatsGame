@@ -51,15 +51,16 @@ const SongPage = (props) =>{
     },[playlistId,playlistInfo, token])
 
     return(
-        <div onClick={selectedPlaylist}>
-            {playlistInfo ? 
-                <LargeSongBox
-                    token={props.token}
-                    key={playlistInfo.data.id}
-                    picture={playlistInfo.data.images[0].url}
-                    name={playlistInfo.data.name}
-                    />: ''}
-            {playlistId}         
+        <div className="SongPageBackground">
+            <div onClick={selectedPlaylist}>
+                {playlistInfo ?
+                    <LargeSongBox
+                        token={props.token}
+                        key={playlistInfo.data.id}
+                        picture={playlistInfo.data.images[0].url}
+                        name={playlistInfo.data.name}
+                        />: ''}
+            </div>
         </div>
     )
 }
