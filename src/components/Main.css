@@ -1,19 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+body *{
+    font-family: 'IBM Plex Mono';
+    color: whitesmoke;
+}
+
 #MainContainer{
     height: calc(100vh - 60px);
-    background-color: black;
+    background-color: #212529;
     padding: 2rem 7rem;
     display: grid;
     gap: 1rem;
-    overflow: overlay;
+    overflow:overlay;
 
 }
 
 .SongBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: #222326;
     height: 250px;
-    width: 200px;
+    width: 250px;
     border-radius: 15px;
     padding: .7rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    background-color: #495057;
 }
 
 .SongBox img{
@@ -23,19 +36,25 @@
     padding: .7rem;
 }
 
+.playlistName{
+    font-weight: 800;
+}
+
 .hidden{
     display: none;
 }
 
 .token{
-    display: block
+    display: block;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .displayPlaylists{
     display: grid;
-    grid-template-columns: repeat(5, 15rem);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    grid-template-rows: 4;
+    justify-items: center;
 }
 
 .songLink{
@@ -75,4 +94,33 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
+}
+
+.login{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #495057;
+    height: 30rem;
+    width: 25rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.loginMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #212529;
+}
+
+.loginTitle{
+}
+
+.loginBoxTitle{
+    font-size: 2rem;
 }

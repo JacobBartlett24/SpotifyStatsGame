@@ -53,8 +53,7 @@ const SongBox = (props) =>{
         
         <div onClick={() => getPlaylistTracks(props.id,props.token)} className='SongBox'>
             <img src={props.picture} alt={props.picture}></img>
-            <div>{props.name}</div>
-            <div>{props.listens}</div>
+            <div className="playlistName">{props.name}</div>
         </div>
     )
 }

@@ -7,7 +7,7 @@ const Header = () =>{
 
     return(
         <div id='HeaderContainer'>
-            <div>Title</div>
+            <div className="headerTitle">Spotify Music Stats Game</div>
         </div>
     )
 }

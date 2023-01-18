@@ -23,7 +23,6 @@ const Login = () =>{
             window.localStorage.setItem("token",token)
 
         }
-
         setToken(token)
 
 
@@ -31,7 +30,15 @@ const Login = () =>{
 
     return(
         <div>
-            <a className={token ? "hidden" : "token"}href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}>Login to Spotify</a>
+            <div className={token ? "hidden" : "loginMain"}>
+                <h1 className="loginTitle">Spotify Music Stats Game</h1>
+                <div className="login">
+                    <h2 className="loginBoxTitle">
+                        Login
+                    </h2>
+                    <a className={token ? "hidden" : "token"}href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}>Login to Spotify</a>
+                </div>
+            </div>
             <div>{token ? <LandingPage token={token}/> : ""}</div>
         </div>
     )
