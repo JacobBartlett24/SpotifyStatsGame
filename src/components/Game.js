@@ -14,8 +14,8 @@ const Game = () =>{
     const getRandomTracks = () =>{
         setSong(tracks[Math.floor(Math.random()*tracks.length)]);
         setSong0(tracks[Math.floor(Math.random()*tracks.length)]);
-        console.log(song)
 
+        console.log(song)
     }
 
     useEffect(() =>{
@@ -38,7 +38,6 @@ const Game = () =>{
             }
         }
         getPlaylistTracks()
-        console.log(tracks)
     },[tracks])
 
     useEffect(() => {
@@ -47,17 +46,36 @@ const Game = () =>{
         }
     }, [tracks])
 
-    
+    const measurePopularity = (isSong) =>{
+        if(song.track.popularity < song0.track.popularity && isSong){
+            console.log('wrong')
+        } else if(song.track.popularity < song0.track.popularity && isSong === false){
+            console.log('right')
+        } else if(song.track.popularity > song0.track.popularity && isSong){
+            console.log('right')
+        } else if(song.track.popularity > song0.track.popularity && isSong === false){
+            console.log('wrong')
+        } else if(song.track.popularity === song0.track.popularity){
+            console.log('either is right')
+        }
+        console.log(`song1: ${song.track.name} = ${song.track.popularity}`)
+        console.log(`song2: ${song0.track.name} = ${song0.track.popularity}`)
+
+    }
 
     return(
         <div className="MainGame">
-            <LargeSongBox  
-            name={song ? song.track.name : ''}
-            picture={song ? song.track.album.images[0].url : ''}
-            />
-            <LargeSongBox 
-            name={song0 ? song0.track.name : ''}
-            picture={song0 ? song0.track.album.images[0].url : ''}/>
+            <div onClick={ () => measurePopularity(true) }>
+                <LargeSongBox
+                name={song ? song.track.name : ''}
+                picture={song ? song.track.album.images[0].url : ''}
+                />
+            </div>
+            <div onClick={ () => measurePopularity(false) }>
+                <LargeSongBox
+                name={song0 ? song0.track.name : ''}
+                picture={song0 ? song0.track.album.images[0].url : ''}/>
+            </div>
         </div>
     )
 }
