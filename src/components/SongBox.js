@@ -55,7 +55,6 @@ const SongBox = (props) =>{
             <img src={props.picture} alt={props.picture}></img>
             <div>{props.name}</div>
             <div>{props.listens}</div>
-            {displayLink ? <Link className="Link" to="/SongPage" /> : "" }
         </div>
     )
 }

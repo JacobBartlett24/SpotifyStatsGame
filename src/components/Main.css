@@ -67,3 +67,12 @@
     border-radius: 15px;
     padding: .7rem
 }
+
+.MainGame{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
