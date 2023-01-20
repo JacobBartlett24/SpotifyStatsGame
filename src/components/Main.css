@@ -96,7 +96,6 @@ body *{
     width: 100vw;
     background-color: #212529;
     overflow: hidden
-
 }
 
 .login{
@@ -134,3 +133,4 @@ body *{
     padding: 2rem 7rem;
     overflow: overlay;
 }
+

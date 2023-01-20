@@ -46,20 +46,33 @@ const Game = () =>{
         }
     }, [tracks])
 
-    const measurePopularity = (isSong) =>{
-        if(song.track.popularity < song0.track.popularity && isSong){
-            console.log('wrong')
-        } else if(song.track.popularity < song0.track.popularity && isSong === false){
-            console.log('right')
-        } else if(song.track.popularity > song0.track.popularity && isSong){
-            console.log('right')
-        } else if(song.track.popularity > song0.track.popularity && isSong === false){
-            console.log('wrong')
-        } else if(song.track.popularity === song0.track.popularity){
-            console.log('either is right')
+    const generateNewSong = (songChoice) =>{
+        if(songChoice === 'song0'){
+            setSong0(tracks[Math.floor(Math.random()*tracks.length)])
+        } else if(songChoice === 'song'){
+            setSong(tracks[Math.floor(Math.random()*tracks.length)])
         }
-        console.log(`song1: ${song.track.name} = ${song.track.popularity}`)
-        console.log(`song2: ${song0.track.name} = ${song0.track.popularity}`)
+    }
+
+    const measurePopularity = (isSong) =>{
+        //Clicked song, song had less
+        if(song.track.popularity < song0.track.popularity && isSong){
+            generateNewSong('song')
+        //Clicked song0, song0 had more
+        } else if(song.track.popularity < song0.track.popularity && isSong === false){
+            generateNewSong('song')
+        //Clicked song, song had more
+        } else if(song.track.popularity > song0.track.popularity && isSong){
+            generateNewSong('song0')
+        //Clicked song0, song had more
+        } else if(song.track.popularity > song0.track.popularity && isSong === false){
+            generateNewSong('song0')
+        } else if(song.track.popularity === song0.track.popularity){
+            generateNewSong('song')
+            generateNewSong('song0')
+        }
+        console.log(`song: ${song.track.name} = ${song.track.popularity}`)
+        console.log(`song0: ${song0.track.name} = ${song0.track.popularity}`)
 
     }
 
