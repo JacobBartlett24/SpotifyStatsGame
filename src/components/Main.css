@@ -173,12 +173,10 @@ body *{
     }
 }
 
-.right:active{
-    animation-name: rightAnimation;
-    animation-duration: 1s;
+.right{
+    animation: rightAnimation 1s;
 }
 
-.wrong:active{
-    animation-name: wrongAnimation;
-    animation-duration: 1s;
+.wrong{
+    animation: wrongAnimation 1s;
 }

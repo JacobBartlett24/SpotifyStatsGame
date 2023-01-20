@@ -16,8 +16,6 @@ const Game = () =>{
     const getRandomTracks = () =>{
         setSong(tracks[Math.floor(Math.random()*tracks.length)]);
         setSong0(tracks[Math.floor(Math.random()*tracks.length)]);
-
-        console.log(song)
     }
 
     useEffect(() =>{
@@ -56,36 +54,45 @@ const Game = () =>{
         }
     }
 
-    
-
     const measurePopularity = (isSong) =>{
         //Clicked song, song had less
         if(song.track.popularity < song0.track.popularity && isSong){
             generateNewSong('song')
             setStyle('wrong')
+            setTimeout(() => {
+                setStyle('')
+            }, 1000);
             setCounter(0)
         //Clicked song0, song0 had more
         } else if(song.track.popularity < song0.track.popularity && isSong === false){
             generateNewSong('song')
             setStyle('right')
+            setTimeout(() => {
+                setStyle('')
+            }, 1000);
             setCounter(counter + 1)
         //Clicked song, song had more
         } else if(song.track.popularity > song0.track.popularity && isSong){
             generateNewSong('song0')
             setStyle('right')
+            setTimeout(() => {
+                setStyle('')
+            }, 1000);
             setCounter(counter + 1)
         //Clicked song0, song0 had less
         } else if(song.track.popularity > song0.track.popularity && isSong === false){
             generateNewSong('song0')
             setStyle('wrong')
             setCounter(0)
+            setTimeout(() => {
+                setStyle('')
+            }, 1000);
         } else if(song.track.popularity === song0.track.popularity){
             generateNewSong('song')
             generateNewSong('song0')
         }
         console.log(`song: ${song.track.name} = ${song.track.popularity}`)
         console.log(`song0: ${song0.track.name} = ${song0.track.popularity}`)
-
     }
 
     return(
