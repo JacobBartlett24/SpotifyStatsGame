@@ -7,7 +7,7 @@ const LargeSongBox = (props) =>{
     
     return(
         
-        <div className='SongBox Large'>
+        <div className={'SongBox Large ' + props.style}>
             <img src={props.picture} alt={props.picture}></img>
             <div className="playlistName">{props.name}</div>
             {props.link}

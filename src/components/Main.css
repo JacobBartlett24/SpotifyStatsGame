@@ -134,3 +134,11 @@ body *{
     overflow: overlay;
 }
 
+.right{
+    background-color: green;
+}
+
+.wrong{
+    background-color: red;
+}
+

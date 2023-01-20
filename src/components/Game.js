@@ -10,6 +10,7 @@ const Game = () =>{
     const [tracks, setTracks] = useState([])
     const [song, setSong] = useState()
     const [song0, setSong0] = useState()
+    const [style, setStyle] = useState('')
 
     const getRandomTracks = () =>{
         setSong(tracks[Math.floor(Math.random()*tracks.length)]);
@@ -58,15 +59,19 @@ const Game = () =>{
         //Clicked song, song had less
         if(song.track.popularity < song0.track.popularity && isSong){
             generateNewSong('song')
+            setStyle('wrong')
         //Clicked song0, song0 had more
         } else if(song.track.popularity < song0.track.popularity && isSong === false){
             generateNewSong('song')
+            setStyle('right')
         //Clicked song, song had more
         } else if(song.track.popularity > song0.track.popularity && isSong){
             generateNewSong('song0')
-        //Clicked song0, song had more
+            setStyle('right')
+        //Clicked song0, song0 had less
         } else if(song.track.popularity > song0.track.popularity && isSong === false){
             generateNewSong('song0')
+            setStyle('wrong')
         } else if(song.track.popularity === song0.track.popularity){
             generateNewSong('song')
             generateNewSong('song0')
@@ -82,12 +87,13 @@ const Game = () =>{
                 <LargeSongBox
                 name={song ? song.track.name : ''}
                 picture={song ? song.track.album.images[0].url : ''}
-                />
+                style={style}/>
             </div>
             <div onClick={ () => measurePopularity(false) }>
                 <LargeSongBox
                 name={song0 ? song0.track.name : ''}
-                picture={song0 ? song0.track.album.images[0].url : ''}/>
+                picture={song0 ? song0.track.album.images[0].url : ''}
+                style={style}/>
             </div>
         </div>
     )
