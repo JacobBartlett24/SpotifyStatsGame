@@ -8,7 +8,7 @@ const Login = () =>{
     const [token, setToken] = useState('')
 
     const clientId = '2925bd9799f14dc494db1806a83a4ab8';
-    const redirectUri = 'http://localhost:3001/';
+    const redirectUri = 'http://localhost:3000/';
     const responseType = 'token'
     const authEndpoint = 'https://accounts.spotify.com/authorize'
 
