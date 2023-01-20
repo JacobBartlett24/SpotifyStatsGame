@@ -8,7 +8,7 @@ const Login = () =>{
     const [token, setToken] = useState('')
 
     const clientId = '2925bd9799f14dc494db1806a83a4ab8';
-    const redirectUri = 'http://localhost:3000/';
+    const redirectUri = 'http://localhost:3001/';
     const responseType = 'token'
     const authEndpoint = 'https://accounts.spotify.com/authorize'
 
@@ -29,7 +29,7 @@ const Login = () =>{
     }, [])
 
     return(
-        <div>
+        <div className="loginMainContainer">
             <div className={token ? "hidden" : "loginMain"}>
                 <h1 className="loginTitle">Spotify Music Stats Game</h1>
                 <div className="login">

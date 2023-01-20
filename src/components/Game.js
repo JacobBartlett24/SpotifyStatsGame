@@ -11,6 +11,7 @@ const Game = () =>{
     const [song, setSong] = useState()
     const [song0, setSong0] = useState()
     const [style, setStyle] = useState('')
+    const [counter, setCounter] = useState(0)
 
     const getRandomTracks = () =>{
         setSong(tracks[Math.floor(Math.random()*tracks.length)]);
@@ -55,23 +56,29 @@ const Game = () =>{
         }
     }
 
+    
+
     const measurePopularity = (isSong) =>{
         //Clicked song, song had less
         if(song.track.popularity < song0.track.popularity && isSong){
             generateNewSong('song')
             setStyle('wrong')
+            setCounter(0)
         //Clicked song0, song0 had more
         } else if(song.track.popularity < song0.track.popularity && isSong === false){
             generateNewSong('song')
             setStyle('right')
+            setCounter(counter + 1)
         //Clicked song, song had more
         } else if(song.track.popularity > song0.track.popularity && isSong){
             generateNewSong('song0')
             setStyle('right')
+            setCounter(counter + 1)
         //Clicked song0, song0 had less
         } else if(song.track.popularity > song0.track.popularity && isSong === false){
             generateNewSong('song0')
             setStyle('wrong')
+            setCounter(0)
         } else if(song.track.popularity === song0.track.popularity){
             generateNewSong('song')
             generateNewSong('song0')
@@ -83,17 +90,22 @@ const Game = () =>{
 
     return(
         <div className="MainGame">
-            <div onClick={ () => measurePopularity(true) }>
-                <LargeSongBox
-                name={song ? song.track.name : ''}
-                picture={song ? song.track.album.images[0].url : ''}
-                style={style}/>
+            <div id="counter">
+                Counter: {counter}
             </div>
-            <div onClick={ () => measurePopularity(false) }>
-                <LargeSongBox
-                name={song0 ? song0.track.name : ''}
-                picture={song0 ? song0.track.album.images[0].url : ''}
-                style={style}/>
+            <div id="choiceBoard">
+                <div onClick={ () => measurePopularity(true) }>
+                    <LargeSongBox
+                    name={song ? song.track.name : ''}
+                    picture={song ? song.track.album.images[0].url : ''}
+                    style={style}/>
+                </div>
+                <div onClick={ () => measurePopularity(false) }>
+                    <LargeSongBox
+                    name={song0 ? song0.track.name : ''}
+                    picture={song0 ? song0.track.album.images[0].url : ''}
+                    style={style}/>
+                </div>
             </div>
         </div>
     )

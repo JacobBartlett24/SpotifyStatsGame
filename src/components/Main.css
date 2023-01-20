@@ -11,7 +11,7 @@ body *{
     padding: 2rem 7rem;
     display: grid;
     gap: 1rem;
-    overflow:overlay;
+    overflow:hidden;
 
 }
 
@@ -88,14 +88,14 @@ body *{
 }
 
 .MainGame{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 5rem 1fr;
     align-items: center;
-    height: 100vh;
+    justify-items: center;
+    height: calc(100vh - 30px);
     width: 100vw;
     background-color: #212529;
-    overflow: hidden
 }
 
 .login{
@@ -118,6 +118,13 @@ body *{
     width: 100vw;
     height: 100vh;
     background-color: #212529;
+    overflow: hidden;
+}
+
+.loginMainContainer{
+    width: 100vw;
+    height: calc(100vh - 30px);
+    overflow: hidden;
 }
 
 .loginBoxTitle{
@@ -128,7 +135,7 @@ body *{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 30px);
     background-color: #212529;
     padding: 2rem 7rem;
     overflow: overlay;
@@ -142,3 +149,18 @@ body *{
     background-color: red;
 }
 
+#counter{
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+#choiceBoard{
+    grid-row: 2;
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: row;
+}
+
+#choiceBoard *{
+    margin: 5rem;
+}
