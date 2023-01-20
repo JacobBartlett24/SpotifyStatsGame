@@ -30,9 +30,8 @@ const Login = () =>{
     }, [])
 
     return(
-        
         <div>
-            <LoginBox />
+            <LoginBox url={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}/>
         </div>
     )
 }

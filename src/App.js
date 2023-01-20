@@ -3,11 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SongPage from "./components/SongPage";
 import Game from "./components/Game";
 import Header from "./components/Header";
-import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <ChakraProvider>
       <div className="App">
         <Header />
         <BrowserRouter>
@@ -18,7 +16,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </ChakraProvider>
     
   );
 }
