@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios'
 import './Main.css'
 import LandingPage from "./LandingPage";
-
+import SpotifyLogo from './spotify.svg'
 const Login = () =>{
 
     const [token, setToken] = useState('')
@@ -36,7 +35,10 @@ const Login = () =>{
                     <h2 className="loginBoxTitle">
                         Login
                     </h2>
-                    <a className={token ? "hidden" : "token"}href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}>Login to Spotify</a>
+                    <a className={token ? "hidden" : "token"}href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}>
+                        <img className='logo'alt='Spotify Logo' src={SpotifyLogo}/>
+                        Login to Spotify
+                    </a>
                 </div>
             </div>
             <div>{token ? <LandingPage token={token}/> : ""}</div>
