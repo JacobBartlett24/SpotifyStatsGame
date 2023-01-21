@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import LargeSongBox from "./LargeSongBox";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
+import ChoiceBoard from "./ChoiceBoard";
 
 
 const Game = () =>{
@@ -100,6 +101,33 @@ const Game = () =>{
             <div id="counter">
                 Counter: {counter}
             </div>
+            <ChoiceBoard 
+            innerHTML={
+                <>
+                    <div onClick={ () => measurePopularity(true) }>
+                        <LargeSongBox
+                        name={song ? song.track.name : ''}
+                        picture={song ? song.track.album.images[0].url : ''}
+                        style={style}/>
+                    </div>
+                    <div onClick={ () => measurePopularity(false) }>
+                        <LargeSongBox
+                        name={song0 ? song0.track.name : ''}
+                        picture={song0 ? song0.track.album.images[0].url : ''}
+                        style={style}/>
+                    </div>
+                </>
+            }/>
+                
+            
+        </div>    
+    )
+}
+
+/*<div className="MainGame">
+            <div id="counter">
+                Counter: {counter}
+            </div>
             <div id="choiceBoard">
                 <div onClick={ () => measurePopularity(true) }>
                     <LargeSongBox
@@ -115,7 +143,6 @@ const Game = () =>{
                 </div>
             </div>
         </div>
-    )
-}
+*/
 
 export default Game;

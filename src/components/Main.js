@@ -3,6 +3,7 @@ import SongBox from './SongBox'
 import './Main.css'
 import { useState } from 'react'
 import axios from 'axios'
+import PlaylistContainer from './PlaylistContainer'
 
 const Main = (props) =>{
 
@@ -28,13 +29,16 @@ const Main = (props) =>{
         
         const displayPlaylists = () =>{
             if(playlists && display.length === 0){
-            setDisplay(playlists.map(pl => <SongBox
-                                                token={props.token}
-                                                id={pl.id}
-                                                key={pl.id} 
-                                                picture={pl.images[0].url}
-                                                name={pl.name}/>))
-            }
+            setDisplay(playlists.map(pl => 
+            <a href="#">
+                <SongBox
+                    token={props.token}
+                    id={pl.id}
+                    key={pl.id}
+                    picture={pl.images[0].url}
+                    name={pl.name}/>
+            </a>
+            ))}
         }
         displayPlaylists()
         
@@ -43,12 +47,7 @@ const Main = (props) =>{
     
     return(
         
-        <div id='MainContainer'>
-            <div className="displayPlaylists">
-                
-                {display}
-            </div>
-        </div>
+        <PlaylistContainer playlists={display}/>
     )
 }
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import './Main.css'
 import LandingPage from "./LandingPage";
 import SpotifyLogo from './spotify.svg'
+import LoginBox from "./LoginBox";
+
 const Login = () =>{
 
     const [token, setToken] = useState('')
@@ -28,7 +30,21 @@ const Login = () =>{
     }, [])
 
     return(
-        <div className="loginMainContainer">
+        <>
+            <div className={token ? "hidden" : "loginMain"}>
+                <LoginBox url={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}/>
+            </div>
+            <div>
+                {token ? <LandingPage token={token}/> : ""}
+            </div>
+        </>
+
+    )
+}
+
+export default Login;
+
+/* <div className="loginMainContainer">
             <div className={token ? "hidden" : "loginMain"}>
                 <h1 className="loginTitle">Spotify Music Stats Game</h1>
                 <div className="login">
@@ -42,8 +58,4 @@ const Login = () =>{
                 </div>
             </div>
             <div>{token ? <LandingPage token={token}/> : ""}</div>
-        </div>
-    )
-}
-
-export default Login;
+</div> */
