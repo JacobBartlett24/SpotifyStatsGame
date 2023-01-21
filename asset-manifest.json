@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.7579eff8.css",
-    "main.js": "/react-gh-pages/static/js/main.37b17245.js",
-    "static/media/spotify.svg": "/react-gh-pages/static/media/spotify.fea9e97596cf509f7f73780ed96f118a.svg",
-    "index.html": "/react-gh-pages/index.html",
-    "main.7579eff8.css.map": "/react-gh-pages/static/css/main.7579eff8.css.map",
-    "main.37b17245.js.map": "/react-gh-pages/static/js/main.37b17245.js.map"
+    "main.css": "/SpotifyStatsGame/static/css/main.7579eff8.css",
+    "main.js": "/SpotifyStatsGame/static/js/main.6c7204a0.js",
+    "static/media/spotify.svg": "/SpotifyStatsGame/static/media/spotify.fea9e97596cf509f7f73780ed96f118a.svg",
+    "index.html": "/SpotifyStatsGame/index.html",
+    "main.7579eff8.css.map": "/SpotifyStatsGame/static/css/main.7579eff8.css.map",
+    "main.6c7204a0.js.map": "/SpotifyStatsGame/static/js/main.6c7204a0.js.map"
   },
   "entrypoints": [
     "static/css/main.7579eff8.css",
-    "static/js/main.37b17245.js"
+    "static/js/main.6c7204a0.js"
   ]
 }
