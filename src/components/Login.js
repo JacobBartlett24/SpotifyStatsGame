@@ -30,9 +30,15 @@ const Login = () =>{
     }, [])
 
     return(
-        <div>
-            <LoginBox url={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}/>
-        </div>
+        <>
+            <div className={token ? "hidden" : "loginMain"}>
+                <LoginBox url={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}/>
+            </div>
+            <div>
+                {token ? <LandingPage token={token}/> : ""}
+            </div>
+        </>
+
     )
 }
 

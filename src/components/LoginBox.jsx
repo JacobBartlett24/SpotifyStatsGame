@@ -14,7 +14,7 @@ export default function LoginBox(props) {
             </CardBody>
             <CardFooter>
                 <ButtonGroup >
-                    <Button size='lg' leftIcon={<FaSpotify />}Heading colorScheme='green'>Login With Spotify</Button>
+                    <a href={ props.url }><Button size='lg' leftIcon={<FaSpotify />} Heading colorScheme='green'>Login With Spotify</Button></a>
                 </ButtonGroup>
             </CardFooter>
         </Card>
