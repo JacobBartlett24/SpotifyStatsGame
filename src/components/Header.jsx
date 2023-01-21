@@ -1,6 +1,7 @@
 import React from "react";
 import './Header.css'
 import {Button, useColorMode} from '@chakra-ui/react'
+import {BsFillMoonFill, BsMoon} from 'react-icons/bs'
 
 const Header = () =>{
 
@@ -8,8 +9,7 @@ const Header = () =>{
 
     return(
         <div id='HeaderContainer'>
-            <Button onClick={toggleColorMode}>
-              Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+            <Button leftIcon={colorMode === 'light' ? <BsFillMoonFill /> : <BsMoon />}ml={2} variant='link' onClick={toggleColorMode}>
             </Button>
             <div className="headerTitle">
                 Spotify Music Stats Game

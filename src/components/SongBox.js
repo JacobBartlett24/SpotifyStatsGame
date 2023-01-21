@@ -8,7 +8,7 @@ import {
     useNavigate
   } from "react-router-dom";
 import SongPage from "./SongPage";
-import SongBoxIDK from "./SongBoxIDK";
+import PlaylistBox from "./PlaylistBox";
 
 const SongBox = (props) =>{
     
@@ -53,7 +53,7 @@ const SongBox = (props) =>{
     return(
             
         <div onClick={() => getPlaylistTracks(props.id,props.token)} >
-            <SongBoxIDK
+            <PlaylistBox
                 playlistImage={props.picture}
                 playlistName={props.name}
                 />

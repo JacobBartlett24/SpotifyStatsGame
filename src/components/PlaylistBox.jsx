@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardBody, CardFooter, Heading, Stack, StackDivider, Box, Text, Divider, ButtonGroup, Button, Image } from '@chakra-ui/react'
 
-export default function SongBoxIDK(props) {
+export default function PlaylistBox(props) {
     return (
         <Card maxW='sm'>
             <CardHeader>

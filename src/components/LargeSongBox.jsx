@@ -13,7 +13,7 @@ const LargeSongBox = (props) =>{
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Image src={props.picture} alt="Playlist Image" />
+                <Image src={props.picture} boxSize='450px' alt="Playlist Image" />
             </CardBody>                        
         </Card>    
     )
