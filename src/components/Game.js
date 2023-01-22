@@ -20,29 +20,34 @@ const Game = () =>{
     }
 
     useEffect(() =>{
-
         const getPlaylistTracks = async () =>{
             if(tracks.length === 0){
-            let userTracks = 
-            await axios.get
-            (`https://api.spotify.com/v1/playlists/${searchParams.get('id')}/tracks`, 
-            {
+            let userTracks = []
+            for (let i = 0; i < 10; i++) {
+                try{
+                    let response = await axios.get(`https://api.spotify.com/v1/playlists/${searchParams.get('id')}/tracks?offset=${i*100}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     },
                     params: {
-
+                        limit: 100
                     }
-            })
-
-            setTracks(userTracks.data.items)
+                })
+                userTracks = userTracks.concat(response.data.items)
+                setTracks(userTracks)
+            } catch(e){
+              console.log(e)
             }
+                }
+            }
+            
         }
         getPlaylistTracks()
+        
     },[tracks])
 
     useEffect(() => {
-        if(tracks.length !== 0){
+        if(tracks.length !== 0 && song === undefined && song0 === undefined){
             getRandomTracks()   
         }
     }, [tracks])
@@ -118,8 +123,6 @@ const Game = () =>{
                     </div>
                 </>
             }/>
-                
-            
         </div>    
     )
 }
