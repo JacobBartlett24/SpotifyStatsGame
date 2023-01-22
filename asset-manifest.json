@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SpotifyStatsGame/static/css/main.7579eff8.css",
-    "main.js": "/SpotifyStatsGame/static/js/main.6c7204a0.js",
+    "main.css": "/SpotifyStatsGame/static/css/main.e253fbd4.css",
+    "main.js": "/SpotifyStatsGame/static/js/main.7d4ea736.js",
     "static/media/spotify.svg": "/SpotifyStatsGame/static/media/spotify.fea9e97596cf509f7f73780ed96f118a.svg",
     "index.html": "/SpotifyStatsGame/index.html",
-    "main.7579eff8.css.map": "/SpotifyStatsGame/static/css/main.7579eff8.css.map",
-    "main.6c7204a0.js.map": "/SpotifyStatsGame/static/js/main.6c7204a0.js.map"
+    "main.e253fbd4.css.map": "/SpotifyStatsGame/static/css/main.e253fbd4.css.map",
+    "main.7d4ea736.js.map": "/SpotifyStatsGame/static/js/main.7d4ea736.js.map"
   },
   "entrypoints": [
-    "static/css/main.7579eff8.css",
-    "static/js/main.6c7204a0.js"
+    "static/css/main.e253fbd4.css",
+    "static/js/main.7d4ea736.js"
   ]
 }
