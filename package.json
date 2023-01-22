@@ -1,7 +1,7 @@
 {
   "name": "music-stats",
   "version": "0.1.0",
-  "homepage": "https://JacobBartlett24.github.io/react-gh-pages",
+  "homepage": "https://jacobbartlett24.github.io/SpotifyStatsGame",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",

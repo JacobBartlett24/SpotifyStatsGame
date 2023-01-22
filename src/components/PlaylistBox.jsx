@@ -9,11 +9,10 @@ export default function PlaylistBox(props) {
             <CardHeader>
                 <Heading align='center' as='h2' size='lg'>
                     {props.playlistName}
-
                 </Heading>
             </CardHeader>
             <CardBody>
-                <Image boxSize="300px"src={props.playlistImage} alt="Playlist Image" />
+                <Image borderRadius="md" boxSize="300px"src={props.playlistImage} alt="Playlist Image" />
             </CardBody>                        
         </Card>
     )
