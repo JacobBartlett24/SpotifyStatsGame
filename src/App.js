@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route path="/SongPage" element={<SongPage />} />
             <Route path="/Game" element={<Game />} />
-            <Route path="/" element={<Login />} />
+            <Route path="/SpotifyStatsGame" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </div>
