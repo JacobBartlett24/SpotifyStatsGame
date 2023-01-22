@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Main.css'
 import LandingPage from "./LandingPage";
-import SpotifyLogo from './spotify.svg'
 import LoginBox from "./LoginBox";
 
 const Login = () =>{
@@ -9,7 +8,7 @@ const Login = () =>{
     const [token, setToken] = useState('')
 
     const clientId = '2925bd9799f14dc494db1806a83a4ab8';
-    const redirectUri = 'http://localhost:3000/SpotifyStatsGame';
+    const redirectUri = 'https://jacobbartlett24.github.io/SpotifyStatsGame/';
     const responseType = 'token'
     const authEndpoint = 'https://accounts.spotify.com/authorize'
 
