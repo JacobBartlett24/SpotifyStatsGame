@@ -3,6 +3,7 @@ import LargeSongBox from "./LargeSongBox";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 import ChoiceBoard from "./ChoiceBoard";
+import Counter from "./Counter";
 
 
 const Game = () =>{
@@ -103,9 +104,6 @@ const Game = () =>{
 
     return(
         <div className="MainGame">
-            <div id="counter">
-                Counter: {counter}
-            </div>
             <ChoiceBoard 
             innerHTML={
                 <>
@@ -123,6 +121,7 @@ const Game = () =>{
                     </div>
                 </>
             }/>
+            <Counter count={counter}/>
         </div>    
     )
 }

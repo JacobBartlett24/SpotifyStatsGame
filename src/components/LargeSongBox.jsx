@@ -7,7 +7,7 @@ const LargeSongBox = (props) =>{
 
     return(
         
-            <Box borderRadius="md" boxShadow='2xl' border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''}>
+            <Box mr={20} ml={20} borderRadius="md" boxShadow='2xl' border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''}>
                 <a href="#">
                     <Card maxW='lg'>
                         <CardHeader>

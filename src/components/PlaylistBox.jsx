@@ -5,7 +5,7 @@ export default function PlaylistBox(props) {
     const {colorMode, toggleColorMode} = useColorMode()
 
     return (
-        <Card border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''} boxShadow='md'maxW='sm'>
+        <Card border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''} boxShadow='md' maxW='300px'>
             <CardHeader>
                 <Heading align='center' as='h2' size='lg'>
                     {props.playlistName}

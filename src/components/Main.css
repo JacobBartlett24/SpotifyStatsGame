@@ -15,3 +15,15 @@
     align-items: center;
     height: 100vh;
 }
+
+.MainGame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
+}
+
+#counter{
+    margin-top: 2rem;
+}
