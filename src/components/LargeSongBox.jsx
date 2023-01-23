@@ -9,7 +9,8 @@ const LargeSongBox = (props) =>{
         
             <Box mr={20} ml={20} borderRadius="md" boxShadow='2xl' border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''}>
                 <a href="#">
-                    <Card maxW='lg'>
+                    <Card 
+                    backgroundColor={props.style === 'wrong' ? 'red' : props.style === 'right' ? 'green' : ''} maxW='lg'>
                         <CardHeader>
                             <Heading align='center' as='h2' size='lg'>
                             {props.name}

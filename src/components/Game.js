@@ -37,7 +37,7 @@ const Game = () =>{
                 userTracks = userTracks.concat(response.data.items)
                 setTracks(userTracks)
             } catch(e){
-              console.log(e)
+              console.error(e)
             }
                 }
             }
@@ -60,12 +60,29 @@ const Game = () =>{
             setSong(tracks[Math.floor(Math.random()*tracks.length)])
         }
     }
+    
+    //change color of songbox on click temporarily
+    const changeColor = (outcome) =>{
+        if(outcome === 'right'){
+            setStyle('right')
+            setTimeout(() => {
+                setStyle('')
+            }, 500);
+            console.log(style)
+
+        } else {
+            setStyle('wrong')
+            setTimeout(() => {
+                setStyle('')
+            }, 500);
+        }
+    }
 
     const measurePopularity = (isSong) =>{
         //Clicked song, song had less
         if(song.track.popularity < song0.track.popularity && isSong){
             generateNewSong('song')
-            setStyle('wrong')
+            changeColor('wrong')
             setTimeout(() => {
                 setStyle('')
             }, 1000);
@@ -73,7 +90,7 @@ const Game = () =>{
         //Clicked song0, song0 had more
         } else if(song.track.popularity < song0.track.popularity && isSong === false){
             generateNewSong('song')
-            setStyle('right')
+            changeColor('right')
             setTimeout(() => {
                 setStyle('')
             }, 1000);
@@ -81,7 +98,7 @@ const Game = () =>{
         //Clicked song, song had more
         } else if(song.track.popularity > song0.track.popularity && isSong){
             generateNewSong('song0')
-            setStyle('right')
+            changeColor('right')
             setTimeout(() => {
                 setStyle('')
             }, 1000);
@@ -89,7 +106,7 @@ const Game = () =>{
         //Clicked song0, song0 had less
         } else if(song.track.popularity > song0.track.popularity && isSong === false){
             generateNewSong('song0')
-            setStyle('wrong')
+            changeColor('wrong')
             setCounter(0)
             setTimeout(() => {
                 setStyle('')
@@ -98,8 +115,6 @@ const Game = () =>{
             generateNewSong('song')
             generateNewSong('song0')
         }
-        console.log(`song: ${song.track.name} = ${song.track.popularity}`)
-        console.log(`song0: ${song0.track.name} = ${song0.track.popularity}`)
     }
 
     return(
@@ -107,17 +122,19 @@ const Game = () =>{
             <ChoiceBoard 
             innerHTML={
                 <>
-                    <div onClick={ () => measurePopularity(true) }>
+                    <div  onClick={ () => measurePopularity(true) }>
                         <LargeSongBox
+                        style={style}
                         name={song ? song.track.name : ''}
                         picture={song ? song.track.album.images[0].url : ''}
-                        style={style}/>
+                        />
                     </div>
-                    <div onClick={ () => measurePopularity(false) }>
+                    <div  onClick={ () => measurePopularity(false) }>
                         <LargeSongBox
+                        style={style}
                         name={song0 ? song0.track.name : ''}
                         picture={song0 ? song0.track.album.images[0].url : ''}
-                        style={style}/>
+                        />
                     </div>
                 </>
             }/>
