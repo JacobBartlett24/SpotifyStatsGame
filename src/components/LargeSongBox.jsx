@@ -13,7 +13,7 @@ const LargeSongBox = (props) =>{
                     backgroundColor={props.style === 'wrong' ? 'red' : props.style === 'right' ? 'green' : ''} maxH='xl' minW='md'maxW='lg'>
                         <CardHeader>
                             <Heading align='center' as='h2' size='lg'>
-                            <Text isTruncated>{props.name}</Text>
+                                <Text isTruncated>{props.name}</Text>
                             </Heading>
                         </CardHeader>
                         <CardBody>
