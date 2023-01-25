@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, Heading, CardBody, Image, Box,  useColorMode} from "@chakra-ui/react";
+import { Card, CardHeader, Heading, Text, CardBody, Image, Box,  useColorMode} from "@chakra-ui/react";
 
 const LargeSongBox = (props) =>{
     
@@ -10,10 +10,10 @@ const LargeSongBox = (props) =>{
             <Box mr={20} ml={20} borderRadius="md" boxShadow='2xl' border={colorMode === 'light' ? '1px' : ''} borderColor={colorMode === 'light' ? 'black' : ''}>
                 <a href="#">
                     <Card 
-                    backgroundColor={props.style === 'wrong' ? 'red' : props.style === 'right' ? 'green' : ''} maxW='lg'>
+                    backgroundColor={props.style === 'wrong' ? 'red' : props.style === 'right' ? 'green' : ''} maxH='xl' minW='md'maxW='lg'>
                         <CardHeader>
                             <Heading align='center' as='h2' size='lg'>
-                            {props.name}
+                            <Text isTruncated>{props.name}</Text>
                             </Heading>
                         </CardHeader>
                         <CardBody>
